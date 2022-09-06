@@ -1,29 +1,24 @@
 import express from "express";
 import morgan from "morgan";
+import globalRouter from "./routers/globalRouter";
+import videoRouter from "./routers/videoRouter";
+import userRouter from "./routers/userRouter";
 
 const PORT = 4000;
+
+console.log(process.cwd());
 
 const app = express();
 const logger = morgan("dev");
 
-// const gassipMiddleware = (req, res, next) => {
-//   console.log(`Someone is going to:${req.url}`);
-//   next();
-// };
-
-const handleHome = (req, res) => {
-  return res.send("Hello main");
-};
-const handleLogin = (req, res) => {
-  return res.send("Here login");
-};
-
-// app.use(gassipMiddleware);
-
+app.set("view engine", "pug");
+app.set("views", process.cwd() + "/src/views");
 app.use(logger);
-app.get("/", handleHome);
-app.get("/login", handleLogin);
+app.use("/", globalRouter);
+app.use("/videos", videoRouter);
+app.use("/users", userRouter);
 
-const handleListening = () => console.log(`Server listening on port ${PORT}`);
+const handleListening = () =>
+  console.log(`✅ Server listenting on port http://localhost:${PORT} 🚀`);
 
 app.listen(PORT, handleListening);
