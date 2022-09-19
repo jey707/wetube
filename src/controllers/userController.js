@@ -178,7 +178,6 @@ export const finishKakaoLogin = async (req, res) => {
         },
       })
     ).json();
-    console.log(userToken);
     if (userToken.msg === "no authentication key!" || userToken.code === -401) {
       console.log("no authentication key or code -401");
       return res.redirect("/login");
@@ -195,7 +194,6 @@ export const finishKakaoLogin = async (req, res) => {
         },
       })
     ).json();
-    console.log(userData);
     const kakaoAccount = userData.kakao_account;
     const profile = kakaoAccount.profile;
     if (
@@ -205,7 +203,6 @@ export const finishKakaoLogin = async (req, res) => {
       return res.redirect("/login");
     }
 
-    console.log(kakaoAccount.email);
     let user = await User.findOne({ email: kakaoAccount.email });
     if (!user) {
       user = await User.create({
