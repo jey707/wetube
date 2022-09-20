@@ -1,0 +1,19 @@
+.social-login {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 30px;
+  margin-top: 30px;
+  .social__btn {
+    display: block;
+    height: 50px;
+  }
+  .social__btn--github {
+    background-color: transparent;
+    color: azure;
+  }
+  .social__btn--kakao {
+    background-color: inherit;
+  }
+  .kakao__img {
+    height: 100%;
+  }
+}
