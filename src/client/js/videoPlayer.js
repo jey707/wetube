@@ -105,6 +105,9 @@ const handleMouseLeave = () => {
 };
 
 window.addEventListener("keydown", function (event) {
+  if (event.target.id === "commet__text") {
+    return false;
+  }
   if (event.code == "Space") {
     handlePlayClick();
   }

@@ -1,0 +1,81 @@
+.video__info {
+  p {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 35px;
+  }
+  small {
+    color: rgba(255, 255, 255, 0.678);
+  }
+}
+.video__write {
+  small {
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  span {
+    line-height: 20px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.678);
+  }
+}
+
+.video__add-comments {
+  .video__comment-form {
+    max-width: 60%;
+    position: relative;
+    textarea {
+      width: 81%;
+      border-radius: 5px;
+      font-size: 18px;
+      padding: 10px;
+      height: 100px;
+    }
+    textarea::placeholder {
+      color: #3030305d;
+      font-size: 18px;
+    }
+    button {
+      position: absolute;
+      top: 30;
+      border-radius: 5px;
+      border: 1px solid dimgray;
+      color: white;
+      font-size: 16px;
+      background-color: dimgray;
+      height: 120px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: rgba(105, 105, 105, 0.407);
+      border: 1px solid white;
+    }
+  }
+}
+.video__comments {
+  display: flex;
+  flex-direction: column;
+  max-width: 560px;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 20px;
+
+  .video__comment {
+    position: relative;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: white;
+    color: black;
+    margin-bottom: 10px;
+  }
+  .comment__delete {
+    position: absolute;
+    right: 15px;
+    cursor: pointer;
+    transition: 0.3s all;
+  }
+  .comment__delete:hover {
+    transform: scale(1.5);
+  }
+}
