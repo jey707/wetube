@@ -3,7 +3,7 @@ extends base.pug
 block content
     div.upload__container
         div.upload__video
-            video#preview
+            video(crossorigin)#preview
             button#actionBtn.social__btn Start Recording
         if errorMessage
             span=errorMessage
@@ -18,4 +18,4 @@ block content
             input(type="submit", value="Upload Video")
 
 block scripts
-    script(src="/static/js/recorder.js") 
+    script(src="/static/js/recorder.js" crossorigin="anonymous") 
